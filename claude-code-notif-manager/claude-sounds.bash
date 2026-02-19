@@ -15,13 +15,23 @@ export CLAUDE_PRECOMPACT_FILE="${CLAUDE_PRECOMPACT_FILE:-$CLAUDE_DIR/.claude-com
 export CLAUDE_PERMISSION_FILE="${CLAUDE_PERMISSION_FILE:-$CLAUDE_DIR/.claude-permission}"
 export CLAUDE_QUESTION_FILE="${CLAUDE_QUESTION_FILE:-$CLAUDE_DIR/.claude-question}"
 
-# Sound directories
+# Sound directories (used in random mode)
 export CLAUDE_DONE_SOUNDS="${CLAUDE_DONE_SOUNDS:-$CLAUDE_SOUNDS_DIR/done}"
 export CLAUDE_START_SOUNDS="${CLAUDE_START_SOUNDS:-$CLAUDE_SOUNDS_DIR/start}"
 export CLAUDE_PROMPT_SOUNDS="${CLAUDE_PROMPT_SOUNDS:-$CLAUDE_SOUNDS_DIR/userpromptsubmit}"
 export CLAUDE_PRECOMPACT_SOUNDS="${CLAUDE_PRECOMPACT_SOUNDS:-$CLAUDE_SOUNDS_DIR/precompact}"
 export CLAUDE_PERMISSION_SOUNDS="${CLAUDE_PERMISSION_SOUNDS:-$CLAUDE_SOUNDS_DIR/permission}"
 export CLAUDE_QUESTION_SOUNDS="${CLAUDE_QUESTION_SOUNDS:-$CLAUDE_SOUNDS_DIR/question}"
+
+# Deterministic mode: set specific sound files per event (overrides random selection)
+# To enable: set CLAUDE_SOUND_MODE=deterministic
+export CLAUDE_SOUND_MODE="${CLAUDE_SOUND_MODE:-deterministic}"
+export CLAUDE_START_SOUND="${CLAUDE_START_SOUND:-$CLAUDE_SOUNDS_DIR/start/carrier_has_arrived.mp3}"
+export CLAUDE_DONE_SOUND="${CLAUDE_DONE_SOUND:-$CLAUDE_SOUNDS_DIR/done/jobs_finished.mp3}"
+export CLAUDE_PROMPT_SOUND="${CLAUDE_PROMPT_SOUND:-$CLAUDE_SOUNDS_DIR/userpromptsubmit/go_go_go.mp3}"
+export CLAUDE_PRECOMPACT_SOUND="${CLAUDE_PRECOMPACT_SOUND:-$CLAUDE_SOUNDS_DIR/precompact/we_cannot_hold.mp3}"
+export CLAUDE_PERMISSION_SOUND="${CLAUDE_PERMISSION_SOUND:-$CLAUDE_SOUNDS_DIR/permission/awaiting_orders.mp3}"
+export CLAUDE_QUESTION_SOUND="${CLAUDE_QUESTION_SOUND:-$CLAUDE_SOUNDS_DIR/question/whats_the_plan.mp3}"
 
 CLAUDE_WATCHER_PID_FILE="$HOME/.claude_watcher.pid"
 CLAUDE_SOUNDS_ENABLED_FILE="$HOME/.claude_sounds_enabled"
@@ -44,12 +54,25 @@ _claude_random_sound() {
   echo "${files[rand % n]}"
 }
 
-# Generic file watcher that plays a random sound from directory when trigger file appears
+# Resolve the sound file for an event: use specific file in deterministic mode, random otherwise
+_claude_get_sound() {
+  local sound_dir="$1"
+  local specific_file="$2"
+
+  if [ "$CLAUDE_SOUND_MODE" = "deterministic" ] && [ -n "$specific_file" ] && [ -f "$specific_file" ]; then
+    echo "$specific_file"
+  else
+    _claude_random_sound "$sound_dir"
+  fi
+}
+
+# Generic file watcher that plays a sound when trigger file appears
+# In deterministic mode, plays the specific file; otherwise picks a random one from the directory
 _claude_watcher() {
-  local watch_file="$1" sound_dir="$2"
+  local watch_file="$1" sound_dir="$2" specific_file="$3"
   fswatch -o "$watch_file" 2>/dev/null | while read; do
     if [ -f "$watch_file" ]; then
-      local sound_file=$(_claude_random_sound "$sound_dir")
+      local sound_file=$(_claude_get_sound "$sound_dir" "$specific_file")
       if [ -n "$sound_file" ]; then
         if [ -n "$CLAUDE_SOUND_VOLUME" ]; then
           afplay -v "$CLAUDE_SOUND_VOLUME" "$sound_file" &
@@ -91,13 +114,14 @@ claude_sound_watcher_start() {
   _claude_validate || return 1
 
   # Start watchers in background
+  # Each watcher receives: trigger_file, sound_directory, specific_sound_file
   (
-    _claude_watcher "$CLAUDE_DONE_FILE" "$CLAUDE_DONE_SOUNDS" &
-    _claude_watcher "$CLAUDE_START_FILE" "$CLAUDE_START_SOUNDS" &
-    _claude_watcher "$CLAUDE_PROMPT_FILE" "$CLAUDE_PROMPT_SOUNDS" &
-    _claude_watcher "$CLAUDE_PRECOMPACT_FILE" "$CLAUDE_PRECOMPACT_SOUNDS" &
-    _claude_watcher "$CLAUDE_PERMISSION_FILE" "$CLAUDE_PERMISSION_SOUNDS" &
-    _claude_watcher "$CLAUDE_QUESTION_FILE" "$CLAUDE_QUESTION_SOUNDS" &
+    _claude_watcher "$CLAUDE_DONE_FILE" "$CLAUDE_DONE_SOUNDS" "$CLAUDE_DONE_SOUND" &
+    _claude_watcher "$CLAUDE_START_FILE" "$CLAUDE_START_SOUNDS" "$CLAUDE_START_SOUND" &
+    _claude_watcher "$CLAUDE_PROMPT_FILE" "$CLAUDE_PROMPT_SOUNDS" "$CLAUDE_PROMPT_SOUND" &
+    _claude_watcher "$CLAUDE_PRECOMPACT_FILE" "$CLAUDE_PRECOMPACT_SOUNDS" "$CLAUDE_PRECOMPACT_SOUND" &
+    _claude_watcher "$CLAUDE_PERMISSION_FILE" "$CLAUDE_PERMISSION_SOUNDS" "$CLAUDE_PERMISSION_SOUND" &
+    _claude_watcher "$CLAUDE_QUESTION_FILE" "$CLAUDE_QUESTION_SOUNDS" "$CLAUDE_QUESTION_SOUND" &
     wait
   ) &
   echo $! > "$CLAUDE_WATCHER_PID_FILE"
