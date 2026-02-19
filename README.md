@@ -1,8 +1,38 @@
 # Claude Code Notifications Manager
 
-Use iconic sounds from Starcraft, Warcraft, AoE and more as Claude Code sound cues. Easily customize and manage Claude Code's audio and system notifications. One-click setup once you clone the and run the local web server.
+Use iconic sounds from StarCraft, Warcraft, AoE and more as Claude Code sound cues. Supports **deterministic mode** (one specific sound per event) and **random mode** (random sound from a directory). No server required for basic setup.
 
-## Prerequisites
+## Quick Start (Deterministic Mode - No Server)
+
+Each Claude event plays a specific, thematically chosen StarCraft 2 sound:
+
+| Event | Sound | Unit |
+|-------|-------|------|
+| **SessionStart** | "Carrier has arrived!" | Carrier |
+| **UserPromptSubmit** | "Go go go!" | Marine |
+| **Stop** (done) | "Job's finished." | SCV |
+| **PreCompact** | "We cannot hold!" | Zealot |
+| **PermissionPrompt** | "Awaiting orders." | Raven |
+| **Question** | "What's the plan?" | Raynor |
+
+```bash
+brew install ffmpeg fswatch
+
+cd claude-code-notif-manager
+./scripts/download-deterministic-sounds.sh
+
+# Add to your shell (zsh)
+echo 'source /path/to/claude-code-notif-manager/claude-sounds.zsh' >> ~/.zshrc
+source ~/.zshrc
+```
+
+That's it. Restart your terminal and sounds will play on Claude events.
+
+## Full Setup (Web UI + Random Mode)
+
+For browsing the full catalog of 4,000+ quotes and customizing which sounds play per event:
+
+### Prerequisites
 
 - Node.js 18+
 - `ffmpeg` (audio conversion)
@@ -12,41 +42,35 @@ Use iconic sounds from Starcraft, Warcraft, AoE and more as Claude Code sound cu
 brew install ffmpeg fswatch
 ```
 
-## Quick Start
+### Run the Web UI
 
 ```bash
-# From project root (claude-code-notif-manager/)
 cd claude-code-notif-manager
 npm run install:all
 npm run dev
 ```
 
-Open `http://localhost:5173`.
-
-Then use **One-Click Setup** on the landing page. It runs:
+Open `http://localhost:5173` and use **One-Click Setup** on the landing page. It:
 
 1. Installs Claude hook commands in `~/.claude/settings.json`
 2. Syncs default recommended sounds to `~/.claude/sounds`
-3. Installs `~/.claude-sounds.zsh` or `~/.claude-sounds.bash` and updates shell config
+3. Installs the shell listener script and updates shell config
 
 Restart your terminal after first setup.
 
-## Core Features
+### Web UI Features
 
 - Browse quotes from StarCraft II, Warcraft II, and Age of Empires III
-- Preview audio via backend proxy (`/api/audio`)
-- Download individual quotes as MP3 (`/api/download`)
-- Batch-download selected quotes as ZIP (`/api/download-batch`)
-- Save selected quotes directly to a target hook folder (`/api/save-to-sounds`)
-- Sync full active list to `~/.claude/sounds` with orphan cleanup (`/api/save-to-sounds-all`)
-- Manage multiple lists (create/rename/delete/switch active list)
-- Drag to reorder recommendations within a hook and move between hooks
-- Import/export list setup JSON (`{ "hooks": [...] }`)
-- Toggle watcher and Claude system notifications from the landing page
+- Preview audio inline
+- Download individual MP3s or batch ZIP archives
+- Save quotes directly to hook folders
+- Manage multiple named lists with drag-and-drop reordering
+- Import/export list configurations as JSON
+- Toggle watcher and system notifications from the UI
 
 ## Hook Events and Folders
 
-Claude hooks write trigger files under `~/.claude`, and the watcher plays a random file from the matching folder:
+Claude hooks write trigger files under `~/.claude`, and the watcher plays a sound from the matching folder:
 
 | Hook Event | Trigger File | Sounds Folder |
 | --- | --- | --- |
@@ -57,9 +81,11 @@ Claude hooks write trigger files under `~/.claude`, and the watcher plays a rand
 | `PermissionPrompt` | `~/.claude/.claude-permission` | `~/.claude/sounds/permission` |
 | `Question` | `~/.claude/.claude-question` | `~/.claude/sounds/question` |
 
+In **deterministic mode** (default), each event plays its assigned sound file. In **random mode**, a random file is picked from the event's folder.
+
 ## Shell Commands
 
-After the listener script is sourced, these are available:
+After the listener script is sourced:
 
 ```bash
 cst                           # Toggle sounds on/off (persists state)
@@ -71,14 +97,24 @@ claude_sound_watcher_restart  # Restart watcher
 
 ## Configuration
 
-Environment overrides:
-
 ```bash
-export CLAUDE_SOUNDS_DIR="$HOME/.claude/sounds"
-export CLAUDE_SOUND_VOLUME=0.3
-```
+# Sound mode: "deterministic" (default) or "random"
+export CLAUDE_SOUND_MODE=deterministic
 
-`CLAUDE_SOUND_VOLUME` is a multiplier used by `afplay -v` (`0.0` to `1.0`).
+# Volume multiplier (0.0 to 1.0)
+export CLAUDE_SOUND_VOLUME=0.3
+
+# Sounds root directory
+export CLAUDE_SOUNDS_DIR="$HOME/.claude/sounds"
+
+# Override individual event sounds (deterministic mode)
+export CLAUDE_START_SOUND="$HOME/.claude/sounds/start/carrier_has_arrived.mp3"
+export CLAUDE_DONE_SOUND="$HOME/.claude/sounds/done/jobs_finished.mp3"
+export CLAUDE_PROMPT_SOUND="$HOME/.claude/sounds/userpromptsubmit/go_go_go.mp3"
+export CLAUDE_PRECOMPACT_SOUND="$HOME/.claude/sounds/precompact/we_cannot_hold.mp3"
+export CLAUDE_PERMISSION_SOUND="$HOME/.claude/sounds/permission/awaiting_orders.mp3"
+export CLAUDE_QUESTION_SOUND="$HOME/.claude/sounds/question/whats_the_plan.mp3"
+```
 
 ## Development
 

@@ -2,6 +2,59 @@
 
 Browse unit quotes from StarCraft II, Warcraft II, and Age of Empires III, then map them to Claude Code hook events and sync them into `~/.claude/sounds`.
 
+## Deterministic Sound Mode
+
+By default, each Claude event plays a specific, thematically chosen StarCraft 2 sound instead of a random one from a directory:
+
+| Event | Sound | Unit |
+|-------|-------|------|
+| **SessionStart** | "Carrier has arrived!" | Carrier |
+| **UserPromptSubmit** | "Go go go!" | Marine |
+| **Stop** (done) | "Job's finished." | SCV |
+| **PreCompact** | "We cannot hold!" | Zealot |
+| **PermissionPrompt** | "Awaiting orders." | Raven |
+| **Question** | "What's the plan?" | Raynor |
+
+### Quick setup (no server needed)
+
+```bash
+brew install ffmpeg fswatch
+
+# Download the 6 sounds
+./scripts/download-deterministic-sounds.sh
+
+# Add to your shell config
+echo 'source /path/to/claude-sounds.zsh' >> ~/.zshrc
+source ~/.zshrc
+```
+
+### Configuration
+
+Deterministic mode is the default. Override individual sounds or switch back to random:
+
+```bash
+# Switch to random mode (original behavior)
+export CLAUDE_SOUND_MODE=random
+
+# Override a specific event sound
+export CLAUDE_START_SOUND="$HOME/.claude/sounds/start/my_custom_sound.mp3"
+
+# Adjust volume (0.0-1.0)
+export CLAUDE_SOUND_VOLUME=0.5
+```
+
+### Shell commands
+
+- `cst` - Toggle sounds on/off
+- `claude_sound_watcher_status` - Show watcher status
+- `claude_sound_watcher_restart` - Restart the watcher
+
+---
+
+## Web UI (Optional)
+
+The web UI lets you browse the full catalog of 4,000+ quotes across StarCraft II, Warcraft II, and Age of Empires III, preview sounds, and drag-and-drop them into hook categories. It is **not required** for the deterministic sound setup above.
+
 ## Tech Stack
 
 - Frontend: React 19 + Vite + Tailwind + `@dnd-kit`
