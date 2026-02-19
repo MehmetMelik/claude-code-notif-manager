@@ -26,7 +26,31 @@ echo 'source /path/to/claude-code-notif-manager/claude-sounds.zsh' >> ~/.zshrc
 source ~/.zshrc
 ```
 
-That's it. Restart your terminal and sounds will play on Claude events.
+Then add the following hooks to `~/.claude/settings.json` so Claude Code creates the trigger files that the watcher listens for:
+
+```json
+{
+  "hooks": {
+    "SessionStart": [
+      { "hooks": [{ "type": "command", "command": "touch ~/.claude/.claude-start" }] }
+    ],
+    "UserPromptSubmit": [
+      { "hooks": [{ "type": "command", "command": "touch ~/.claude/.claude-prompt" }] }
+    ],
+    "Stop": [
+      { "hooks": [{ "type": "command", "command": "touch ~/.claude/.claude-done" }] }
+    ],
+    "PreCompact": [
+      { "hooks": [{ "type": "command", "command": "touch ~/.claude/.claude-compact" }] }
+    ],
+    "Notification": [
+      { "hooks": [{ "type": "command", "command": "touch ~/.claude/.claude-permission" }] }
+    ]
+  }
+}
+```
+
+Restart Claude Code and your terminal. Sounds will play on Claude events.
 
 ## Full Setup (Web UI + Random Mode)
 

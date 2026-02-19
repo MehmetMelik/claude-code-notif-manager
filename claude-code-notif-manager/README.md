@@ -28,6 +28,32 @@ echo 'source /path/to/claude-sounds.zsh' >> ~/.zshrc
 source ~/.zshrc
 ```
 
+Then add the following hooks to `~/.claude/settings.json` so Claude Code creates the trigger files:
+
+```json
+{
+  "hooks": {
+    "SessionStart": [
+      { "hooks": [{ "type": "command", "command": "touch ~/.claude/.claude-start" }] }
+    ],
+    "UserPromptSubmit": [
+      { "hooks": [{ "type": "command", "command": "touch ~/.claude/.claude-prompt" }] }
+    ],
+    "Stop": [
+      { "hooks": [{ "type": "command", "command": "touch ~/.claude/.claude-done" }] }
+    ],
+    "PreCompact": [
+      { "hooks": [{ "type": "command", "command": "touch ~/.claude/.claude-compact" }] }
+    ],
+    "Notification": [
+      { "hooks": [{ "type": "command", "command": "touch ~/.claude/.claude-permission" }] }
+    ]
+  }
+}
+```
+
+Restart Claude Code and your terminal.
+
 ### Configuration
 
 Deterministic mode is the default. Override individual sounds or switch back to random:
