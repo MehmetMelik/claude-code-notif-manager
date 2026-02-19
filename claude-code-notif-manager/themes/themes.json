@@ -1,0 +1,470 @@
+{
+  "sc2/protoss": {
+    "game": "StarCraft II",
+    "faction": "Protoss",
+    "sounds": {
+      "start": {
+        "filename": "carrier_has_arrived.mp3",
+        "url": "https://static.wikia.nocookie.net/starcraft/images/3/32/Carrier_Ready00.ogg/revision/latest?cb=20211013142125",
+        "label": "Carrier has arrived!"
+      },
+      "userpromptsubmit": {
+        "filename": "initiating.mp3",
+        "url": "https://static.wikia.nocookie.net/starcraft/images/1/1f/DragoonVoid_Yes01.ogg/revision/latest?cb=20211028180858",
+        "label": "Initiating."
+      },
+      "done": {
+        "filename": "the_merging_is_complete.mp3",
+        "url": "https://static.wikia.nocookie.net/starcraft/images/4/43/Archon_Ready00.ogg/revision/latest?cb=20211012191147",
+        "label": "The merging is complete."
+      },
+      "precompact": {
+        "filename": "my_memory_is_not_what_it_was.mp3",
+        "url": "https://static.wikia.nocookie.net/starcraft/images/7/74/Immortal_Pissed00.ogg/revision/latest?cb=20211021130841",
+        "label": "My memory is not what it was..."
+      },
+      "permission": {
+        "filename": "what_would_you_ask_of_us.mp3",
+        "url": "https://static.wikia.nocookie.net/starcraft/images/9/93/DarkTemplar_What06.ogg/revision/latest?cb=20211013145632",
+        "label": "What would you ask of us?"
+      },
+      "question": {
+        "filename": "what_guidance.mp3",
+        "url": "https://static.wikia.nocookie.net/starcraft/images/9/95/Archon_What03.ogg/revision/latest?cb=20211012191153",
+        "label": "What guidance?"
+      }
+    }
+  },
+  "sc2/terran": {
+    "game": "StarCraft II",
+    "faction": "Terran",
+    "sounds": {
+      "start": {
+        "filename": "who_called_in_the_fleet.mp3",
+        "url": "https://static.wikia.nocookie.net/starcraft/images/2/2e/Battlecruiser_Ready00.ogg/revision/latest?cb=20211006173909",
+        "label": "Who called in the fleet?"
+      },
+      "userpromptsubmit": {
+        "filename": "go_go_go.mp3",
+        "url": "https://static.wikia.nocookie.net/starcraft/images/e/ea/Marine_Yes04.ogg/revision/latest?cb=20211007134742",
+        "label": "Go go go!"
+      },
+      "done": {
+        "filename": "jobs_finished.mp3",
+        "url": "https://static.wikia.nocookie.net/starcraft/images/8/80/SCV_JobsFinished00.ogg/revision/latest?cb=20211007203851",
+        "label": "Job's finished."
+      },
+      "precompact": {
+        "filename": "hear_me_baby_hold_together.mp3",
+        "url": "https://static.wikia.nocookie.net/starcraft/images/c/c2/SCV_Pissed01.ogg/revision/latest?cb=20211007203856",
+        "label": "Hear me baby, hold together..."
+      },
+      "permission": {
+        "filename": "say_the_word.mp3",
+        "url": "https://static.wikia.nocookie.net/starcraft/images/a/a5/Firebat_What02.ogg/revision/latest?cb=20211009035458",
+        "label": "Say the word."
+      },
+      "question": {
+        "filename": "whats_the_plan.mp3",
+        "url": "https://static.wikia.nocookie.net/starcraft/images/c/c8/Raynor_What02.ogg/revision/latest?cb=20211011143222",
+        "label": "What's the plan?"
+      }
+    }
+  },
+  "sc2/zerg": {
+    "game": "StarCraft II",
+    "faction": "Zerg",
+    "sounds": {
+      "start": {
+        "filename": "metamorphosis_complete.mp3",
+        "url": "https://static.wikia.nocookie.net/starcraft/images/3/34/Changeling_MarineReady00.ogg/revision/latest?cb=20211129150917",
+        "label": "Metamorphosis complete."
+      },
+      "userpromptsubmit": {
+        "filename": "engaging.mp3",
+        "url": "https://static.wikia.nocookie.net/starcraft/images/7/75/Changeling_MarineYes00.ogg/revision/latest?cb=20211129150920",
+        "label": "Engaging."
+      },
+      "done": {
+        "filename": "i_serve.mp3",
+        "url": "https://static.wikia.nocookie.net/starcraft/images/4/4f/InfestedTerran_Ready00.ogg/revision/latest?cb=20211217204634",
+        "label": "I serve."
+      },
+      "precompact": {
+        "filename": "nydus_worm_spawned.mp3",
+        "url": "https://static.wikia.nocookie.net/starcraft/images/6/66/NydusWorm_Birth0.ogg/revision/latest?cb=20211219015324",
+        "label": "Nydus Worm spawned."
+      },
+      "permission": {
+        "filename": "your_will.mp3",
+        "url": "https://static.wikia.nocookie.net/starcraft/images/1/16/InfestedTerran_What00.ogg/revision/latest?cb=20211217204635",
+        "label": "Your will?"
+      },
+      "question": {
+        "filename": "lead_me.mp3",
+        "url": "https://static.wikia.nocookie.net/starcraft/images/1/1e/InfestedTerran_What01.ogg/revision/latest?cb=20211217204635",
+        "label": "Lead me."
+      }
+    }
+  },
+  "wc2/alliance": {
+    "game": "Warcraft II",
+    "faction": "Alliance",
+    "sounds": {
+      "start": {
+        "filename": "ready_to_serve.mp3",
+        "url": "https://warcraft.wiki.gg/images/Psready.wav?b8e5a6",
+        "label": "Ready to serve."
+      },
+      "userpromptsubmit": {
+        "filename": "yes_my_lord.mp3",
+        "url": "https://warcraft.wiki.gg/images/Hyessir2.wav?4456c3",
+        "label": "Yes, my lord."
+      },
+      "done": {
+        "filename": "jobs_done.mp3",
+        "url": "https://warcraft.wiki.gg/images/Pswrkdon.wav?2b3f5a",
+        "label": "Job's done."
+      },
+      "precompact": {
+        "filename": "who_summoned_me.mp3",
+        "url": "https://warcraft.wiki.gg/images/Wzready.wav?563e7c",
+        "label": "Who summoned me?"
+      },
+      "permission": {
+        "filename": "awaiting_orders.mp3",
+        "url": "https://warcraft.wiki.gg/images/Hready.wav?830a1b",
+        "label": "Awaiting orders."
+      },
+      "question": {
+        "filename": "your_command.mp3",
+        "url": "https://warcraft.wiki.gg/images/Hwhat1.wav?c7ab9e",
+        "label": "Your command?"
+      }
+    }
+  },
+  "wc2/horde": {
+    "game": "Warcraft II",
+    "faction": "Horde",
+    "sounds": {
+      "start": {
+        "filename": "ready_to_work.mp3",
+        "url": "https://warcraft.wiki.gg/images/Pnready.wav?8a8bb3",
+        "label": "Ready to work."
+      },
+      "userpromptsubmit": {
+        "filename": "dabu.mp3",
+        "url": "https://warcraft.wiki.gg/images/Oyessir2.wav?12feea",
+        "label": "Dabu."
+      },
+      "done": {
+        "filename": "work_complete.mp3",
+        "url": "https://warcraft.wiki.gg/images/Owrkdone.wav?d2fd38",
+        "label": "Work complete."
+      },
+      "precompact": {
+        "filename": "my_tummy_feels_funny.mp3",
+        "url": "https://warcraft.wiki.gg/images/Opissed6.wav?b85d5f",
+        "label": "My tummy feels funny."
+      },
+      "permission": {
+        "filename": "your_command_master.mp3",
+        "url": "https://warcraft.wiki.gg/images/Oready.wav?e51c4a",
+        "label": "Your command, master."
+      },
+      "question": {
+        "filename": "huh.mp3",
+        "url": "https://warcraft.wiki.gg/images/Owhat6.wav?bec346",
+        "label": "Huh?"
+      }
+    }
+  },
+  "aoe3/british": {
+    "game": "Age of Empires III",
+    "faction": "British",
+    "sounds": {
+      "start": {
+        "filename": "i_claim_this_land.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/6/6d/British_Explorer_Claim_AoE3.ogg/revision/latest?cb=20201226081154",
+        "label": "I claim this land a Great Britain's hearth!"
+      },
+      "userpromptsubmit": {
+        "filename": "i_woll.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/0/0a/British_Explorer_Move_3_AoE3.ogg/revision/latest?cb=20210725180055",
+        "label": "I woll - I will"
+      },
+      "done": {
+        "filename": "i_feel_a_bit_strengthened.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/d/d7/British_Explorer_Revived_AoE3.ogg/revision/latest?cb=20201226081302",
+        "label": "I feel a bit strengthened, now."
+      },
+      "precompact": {
+        "filename": "i_am_sorely_grieved.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/1/14/British_Explorer_Disabled_AoE3.ogg/revision/latest?cb=20201226081218",
+        "label": "I am sorely grieved, I may not steera."
+      },
+      "permission": {
+        "filename": "commandement.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/7/7e/British_Explorer_Select_2_AoE3.ogg/revision/latest?cb=20210725180100",
+        "label": "Commandement? - Your command?"
+      },
+      "question": {
+        "filename": "yes.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/4/49/British_Explorer_Select_1_AoE3.ogg/revision/latest?cb=20210725180057",
+        "label": "Yes?"
+      }
+    }
+  },
+  "aoe3/french": {
+    "game": "Age of Empires III",
+    "faction": "French",
+    "sounds": {
+      "start": {
+        "filename": "au_nom_de_la_france.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/b/b6/French_Explorer_Claim_AoE3.ogg/revision/latest?cb=20201226083827",
+        "label": "Au nom de la France, je revendique cette terre!"
+      },
+      "userpromptsubmit": {
+        "filename": "tres_bien.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/3/3b/French_Explorer_Move_3_AoE3.ogg/revision/latest?cb=20211009094258",
+        "label": "Tres bien - Very well"
+      },
+      "done": {
+        "filename": "jai_repris_des_forces.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/d/d8/French_Explorer_Revived_AoE3.ogg/revision/latest?cb=20201226083920",
+        "label": "J'ai repris des forces - I have regained strength"
+      },
+      "precompact": {
+        "filename": "je_suis_blesse.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/a/a2/French_Explorer_Disabled_AoE3.ogg/revision/latest?cb=20201226083845",
+        "label": "Je suis blesse, je ne peux pas bouger"
+      },
+      "permission": {
+        "filename": "votre_ordre.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/b/b7/French_Explorer_Select_2_AoE3.ogg/revision/latest?cb=20211009094052",
+        "label": "Votre ordre? - Your order?"
+      },
+      "question": {
+        "filename": "oui.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/5/55/French_Explorer_Select_1_AoE3.ogg/revision/latest?cb=20211009094443",
+        "label": "Oui? - Yes?"
+      }
+    }
+  },
+  "aoe3/spanish": {
+    "game": "Age of Empires III",
+    "faction": "Spanish",
+    "sounds": {
+      "start": {
+        "filename": "reclamo_esta_tierra.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/4/40/Spanish_Explorer_Claim_AoE3.ogg/revision/latest?cb=20201226091804",
+        "label": "Reclamo esta tierra en nombre de Espana!"
+      },
+      "userpromptsubmit": {
+        "filename": "lo_hare.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/4/44/Spanish_Explorer_Move_3_AoE3.ogg/revision/latest?cb=20211015194641",
+        "label": "Lo hare - I'll do it"
+      },
+      "done": {
+        "filename": "ahora_me_siento_mas_fuerte.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/6/6f/Spanish_Explorer_Revived_AoE3.ogg/revision/latest?cb=20201226091902",
+        "label": "Ahora me siento mas fuerte - I feel stronger now"
+      },
+      "precompact": {
+        "filename": "estoy_herido.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/c/cd/Spanish_Explorer_Disabled_AoE3.ogg/revision/latest?cb=20201226091822",
+        "label": "Estoy herido y no puedo moverme"
+      },
+      "permission": {
+        "filename": "cual_es_su_comando.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/a/a9/Spanish_Explorer_Select_2_AoE3.ogg/revision/latest?cb=20211015194108",
+        "label": "Cual es su comando? - What is your command?"
+      },
+      "question": {
+        "filename": "si.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/5/57/Spanish_Explorer_Select_1_AoE3.ogg/revision/latest?cb=20211015194412",
+        "label": "Si? - Yes?"
+      }
+    }
+  },
+  "aoe3/portuguese": {
+    "game": "Age of Empires III",
+    "faction": "Portuguese",
+    "sounds": {
+      "start": {
+        "filename": "em_nome_de_portugal.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/0/01/Portuguese_Explorer_Claim_AoE3.ogg/revision/latest?cb=20201226090802",
+        "label": "Eu reclamo esta terra em nome de Portugal!"
+      },
+      "userpromptsubmit": {
+        "filename": "eu_vou.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/a/ac/Portuguese_Explorer_Move_3_AoE3.ogg/revision/latest?cb=20211023100034",
+        "label": "Eu vou - I'm going"
+      },
+      "done": {
+        "filename": "ja_me_sinto_mais_forte.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/a/a9/Portuguese_Explorer_Revived_AoE3.ogg/revision/latest?cb=20201226090858",
+        "label": "Ja me sinto mais forte - I'm feeling stronger already"
+      },
+      "precompact": {
+        "filename": "estou_ferido.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/b/bb/Portuguese_Explorer_Disabled_AoE3.ogg/revision/latest?cb=20201226090822",
+        "label": "Estou ferido, nao me posso mexer"
+      },
+      "permission": {
+        "filename": "qual_e_a_sua_ordem.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/3/3e/Portuguese_Explorer_Select_2_AoE3.ogg/revision/latest?cb=20211023100046",
+        "label": "Qual e a sua ordem? - What is your order?"
+      },
+      "question": {
+        "filename": "sim.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/5/56/Portuguese_Explorer_Select_1_AoE3.ogg/revision/latest?cb=20211023095837",
+        "label": "Sim? - Yes?"
+      }
+    }
+  },
+  "aoe3/dutch": {
+    "game": "Age of Empires III",
+    "faction": "Dutch",
+    "sounds": {
+      "start": {
+        "filename": "in_naam_van_nederland.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/0/03/Dutch_Explorer_Claim_AoE3.ogg/revision/latest?cb=20201226082640",
+        "label": "Ik eis dit land op in naam van Nederland!"
+      },
+      "userpromptsubmit": {
+        "filename": "oke.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/d/d8/Dutch_Explorer_Move_3_AoE3.ogg/revision/latest?cb=20211113085956",
+        "label": "Oke - Okay"
+      },
+      "done": {
+        "filename": "ik_voel_me_nu_wat_sterker.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/5/51/Dutch_Explorer_Revived_AoE3.ogg/revision/latest?cb=20201226082751",
+        "label": "Ik voel me nu wat sterker - I'm feeling somewhat better now"
+      },
+      "precompact": {
+        "filename": "ik_ben_gewond.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/1/1e/Dutch_Explorer_Disabled_AoE3.ogg/revision/latest?cb=20201226082707",
+        "label": "Ik ben gewond, ik kan me niet bewegen"
+      },
+      "permission": {
+        "filename": "commando.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/5/5f/Dutch_Explorer_Select_2_AoE3.ogg/revision/latest?cb=20211113090012",
+        "label": "Commando - Command/Order"
+      },
+      "question": {
+        "filename": "ja.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/9/9b/Dutch_Explorer_Select_1_AoE3.ogg/revision/latest?cb=20211113090019",
+        "label": "Ja? - Yes?"
+      }
+    }
+  },
+  "aoe3/germans": {
+    "game": "Age of Empires III",
+    "faction": "Germans",
+    "sounds": {
+      "start": {
+        "filename": "in_namen_von_deutschland.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/4/48/Germans_Explorer_Claim_AoE3.ogg/revision/latest?cb=20201226084639",
+        "label": "In Namen von Deutschland fordere ich dieses Land!"
+      },
+      "userpromptsubmit": {
+        "filename": "verstanden.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/0/05/Germans_Explorer_Move_3_AoE3.ogg/revision/latest?cb=20211031163105",
+        "label": "Verstanden - Understood"
+      },
+      "done": {
+        "filename": "es_geht_mir_besser.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/f/f1/Germans_Explorer_Revived_AoE3.ogg/revision/latest?cb=20201226084743",
+        "label": "Es geht mir besser - I'm feeling better"
+      },
+      "precompact": {
+        "filename": "ich_bin_verwundet.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/3/30/Germans_Explorer_Disabled_AoE3.ogg/revision/latest?cb=20201226084707",
+        "label": "Ich bin verwundet und kann mich nicht bewegen"
+      },
+      "permission": {
+        "filename": "aufgabe.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/e/e3/Germans_Explorer_Select_2_AoE3.ogg/revision/latest?cb=20211031163344",
+        "label": "Aufgabe? - Orders?"
+      },
+      "question": {
+        "filename": "ja.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/7/78/Germans_Explorer_Select_1_AoE3.ogg/revision/latest?cb=20211031163634",
+        "label": "Ja? - Yes?"
+      }
+    }
+  },
+  "aoe3/russians": {
+    "game": "Age of Empires III",
+    "faction": "Russians",
+    "sounds": {
+      "start": {
+        "filename": "imenem_rossii.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/c/c4/Russians_Explorer_Claim_AoE3.ogg/revision/latest?cb=20201224050828",
+        "label": "Imenem Rossii ya ob'yavlyayu etu zemlyu!"
+      },
+      "userpromptsubmit": {
+        "filename": "budet_sdelano.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/f/f1/Russians_Explorer_Move_3_AoE3.ogg/revision/latest?cb=20210529134627",
+        "label": "Budet sdelano - It will be done"
+      },
+      "done": {
+        "filename": "sila_vozvrashchayetsya.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/6/61/Russians_Explorer_Revived_AoE3.ogg/revision/latest?cb=20201224051206",
+        "label": "Ko mne vozvrashchayetsya sila - Strength returns to me"
+      },
+      "precompact": {
+        "filename": "ya_ranen.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/8/8f/Russians_Explorer_Disabled_AoE3.ogg/revision/latest?cb=20201224051019",
+        "label": "Ya ranen, ne mogu idti - I'm wounded, can't go"
+      },
+      "permission": {
+        "filename": "prikaz.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/0/0f/Russians_Explorer_Select_2_AoE3.ogg/revision/latest?cb=20210529134632",
+        "label": "Prikaz? - Order?"
+      },
+      "question": {
+        "filename": "chto.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/2/21/Russians_Explorer_Select_1_AoE3.ogg/revision/latest?cb=20210529134629",
+        "label": "Chto? - What?"
+      }
+    }
+  },
+  "aoe3/ottomans": {
+    "game": "Age of Empires III",
+    "faction": "Ottomans",
+    "sounds": {
+      "start": {
+        "filename": "bu_topraga_el_koyuyorum.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/5/5c/Ottomans_Explorer_Claim_AoE3.ogg/revision/latest?cb=20201226085952",
+        "label": "Bu topraga Turkiye adina el koyuyorum!"
+      },
+      "userpromptsubmit": {
+        "filename": "tamam_olur.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/a/a5/Ottomans_Explorer_Move_3_AoE3.ogg/revision/latest?cb=20210605103911",
+        "label": "Tamam, olur - Okay, fine"
+      },
+      "done": {
+        "filename": "simdi_daha_iyiceyim.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/0/0b/Ottomans_Explorer_Revived_AoE3.ogg/revision/latest?cb=20201226090058",
+        "label": "Simdi daha iyiceyim - I am better now"
+      },
+      "precompact": {
+        "filename": "yaraliyim.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/0/0f/Ottomans_Explorer_Disabled_AoE3.ogg/revision/latest?cb=20201226090021",
+        "label": "Yaraliyim, kipirdayamiyorum! - I'm wounded, I can't move!"
+      },
+      "permission": {
+        "filename": "emrin.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/e/e6/Ottomans_Explorer_Select_2_AoE3.ogg/revision/latest?cb=20210605103916",
+        "label": "Emrin? - Your command?"
+      },
+      "question": {
+        "filename": "evet.mp3",
+        "url": "https://static.wikia.nocookie.net/ageofempires/images/1/19/Ottomans_Explorer_Select_1_AoE3.ogg/revision/latest?cb=20210605103914",
+        "label": "Evet? - Yes?"
+      }
+    }
+  }
+}

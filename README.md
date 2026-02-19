@@ -52,6 +52,40 @@ Then add the following hooks to `~/.claude/settings.json` so Claude Code creates
 
 Restart Claude Code and your terminal. Sounds will play on Claude events.
 
+## Theme Presets
+
+Switch all 6 sounds at once using themed presets from StarCraft II, Warcraft II, and Age of Empires III. Requires `jq` in addition to `ffmpeg`:
+
+```bash
+brew install jq ffmpeg fswatch
+
+cd claude-code-notif-manager
+
+# List all available themes
+./scripts/download-theme-sounds.sh --list
+
+# Download a theme (downloads 6 sounds + writes ~/.claude/sounds/.theme)
+./scripts/download-theme-sounds.sh sc2/protoss
+```
+
+Available themes (13 total):
+
+| Game | Themes |
+|------|--------|
+| StarCraft II | `sc2/protoss`, `sc2/terran`, `sc2/zerg` |
+| Warcraft II | `wc2/alliance`, `wc2/horde` |
+| Age of Empires III | `aoe3/british`, `aoe3/french`, `aoe3/spanish`, `aoe3/portuguese`, `aoe3/dutch`, `aoe3/germans`, `aoe3/russians`, `aoe3/ottomans` |
+
+To switch themes, just run the download script again with a different theme name. The `.theme` file is sourced automatically by the shell scripts.
+
+You can also set `CLAUDE_SOUND_THEME` and run the existing download script:
+
+```bash
+CLAUDE_SOUND_THEME=wc2/horde ./scripts/download-deterministic-sounds.sh
+```
+
+Explicit `CLAUDE_*_SOUND` env vars still override theme sounds.
+
 ## Full Setup (Web UI + Random Mode)
 
 For browsing the full catalog of 4,000+ quotes and customizing which sounds play per event:

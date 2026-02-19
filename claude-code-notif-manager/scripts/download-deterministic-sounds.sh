@@ -12,6 +12,11 @@
 
 set -eo pipefail
 
+# Delegate to theme downloader if CLAUDE_SOUND_THEME is set
+if [ -n "${CLAUDE_SOUND_THEME:-}" ]; then
+  exec "$(dirname "$0")/download-theme-sounds.sh" "$CLAUDE_SOUND_THEME"
+fi
+
 SOUNDS_DIR="${CLAUDE_SOUNDS_DIR:-$HOME/.claude/sounds}"
 
 if ! command -v ffmpeg &>/dev/null; then

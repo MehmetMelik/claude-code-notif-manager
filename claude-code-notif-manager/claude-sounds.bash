@@ -23,6 +23,12 @@ export CLAUDE_PRECOMPACT_SOUNDS="${CLAUDE_PRECOMPACT_SOUNDS:-$CLAUDE_SOUNDS_DIR/
 export CLAUDE_PERMISSION_SOUNDS="${CLAUDE_PERMISSION_SOUNDS:-$CLAUDE_SOUNDS_DIR/permission}"
 export CLAUDE_QUESTION_SOUNDS="${CLAUDE_QUESTION_SOUNDS:-$CLAUDE_SOUNDS_DIR/question}"
 
+# Theme preset: source resolved paths from download-theme-sounds.sh output
+_THEME_FILE="$CLAUDE_SOUNDS_DIR/.theme"
+if [ -f "$_THEME_FILE" ]; then
+  source "$_THEME_FILE"
+fi
+
 # Deterministic mode: set specific sound files per event (overrides random selection)
 # To enable: set CLAUDE_SOUND_MODE=deterministic
 export CLAUDE_SOUND_MODE="${CLAUDE_SOUND_MODE:-deterministic}"

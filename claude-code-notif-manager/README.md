@@ -69,6 +69,38 @@ export CLAUDE_START_SOUND="$HOME/.claude/sounds/start/my_custom_sound.mp3"
 export CLAUDE_SOUND_VOLUME=0.5
 ```
 
+### Theme presets
+
+Switch all 6 event sounds at once using themed presets. Requires `jq`:
+
+```bash
+brew install jq
+
+# List all available themes
+./scripts/download-theme-sounds.sh --list
+
+# Download a theme
+./scripts/download-theme-sounds.sh sc2/protoss
+```
+
+Available themes (13 total):
+
+| Game | Themes |
+|------|--------|
+| StarCraft II | `sc2/protoss`, `sc2/terran`, `sc2/zerg` |
+| Warcraft II | `wc2/alliance`, `wc2/horde` |
+| Age of Empires III | `aoe3/british`, `aoe3/french`, `aoe3/spanish`, `aoe3/portuguese`, `aoe3/dutch`, `aoe3/germans`, `aoe3/russians`, `aoe3/ottomans` |
+
+The script downloads 6 sounds and writes `~/.claude/sounds/.theme`, which is sourced automatically by the shell scripts. To switch themes, run the script again with a different name.
+
+You can also delegate via `CLAUDE_SOUND_THEME`:
+
+```bash
+CLAUDE_SOUND_THEME=wc2/horde ./scripts/download-deterministic-sounds.sh
+```
+
+Explicit `CLAUDE_*_SOUND` env vars still override theme sounds.
+
 ### Shell commands
 
 - `cst` - Toggle sounds on/off
