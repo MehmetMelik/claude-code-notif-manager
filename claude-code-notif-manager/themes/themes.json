@@ -466,5 +466,98 @@
         "label": "Evet? - Yes?"
       }
     }
+  },
+  "tech/minimal": {
+    "game": "Tech",
+    "faction": "Minimal",
+    "generated": true,
+    "sounds": {
+      "start": {
+        "filename": "ascending_ping.mp3",
+        "label": "Ascending 3-note ping (C5-E5-G5)"
+      },
+      "userpromptsubmit": {
+        "filename": "confirm_ping.mp3",
+        "label": "Confirmation ping"
+      },
+      "done": {
+        "filename": "descending_chime.mp3",
+        "label": "Descending 3-note chime (G5-E5-C5)"
+      },
+      "precompact": {
+        "filename": "warning_beep.mp3",
+        "label": "Warning double-beep"
+      },
+      "permission": {
+        "filename": "attention_bell.mp3",
+        "label": "Attention bell tone"
+      },
+      "question": {
+        "filename": "rising_sweep.mp3",
+        "label": "Rising sweep (C5-C6)"
+      }
+    }
+  },
+  "tech/retro": {
+    "game": "Tech",
+    "faction": "Retro",
+    "generated": true,
+    "sounds": {
+      "start": {
+        "filename": "powerup_arpeggio.mp3",
+        "label": "8-bit power-up arpeggio"
+      },
+      "userpromptsubmit": {
+        "filename": "square_blip.mp3",
+        "label": "Short square blip"
+      },
+      "done": {
+        "filename": "victory_jingle.mp3",
+        "label": "8-bit victory jingle"
+      },
+      "precompact": {
+        "filename": "twotone_alarm.mp3",
+        "label": "Two-tone alarm"
+      },
+      "permission": {
+        "filename": "menu_select.mp3",
+        "label": "Menu select beep"
+      },
+      "question": {
+        "filename": "rising_boop.mp3",
+        "label": "Rising 8-bit boop"
+      }
+    }
+  },
+  "tech/sci-fi": {
+    "game": "Tech",
+    "faction": "Sci-Fi",
+    "generated": true,
+    "sounds": {
+      "start": {
+        "filename": "boot_sweep.mp3",
+        "label": "Synth boot sweep"
+      },
+      "userpromptsubmit": {
+        "filename": "confirm_blip.mp3",
+        "label": "Futuristic confirm blip"
+      },
+      "done": {
+        "filename": "synth_resolution.mp3",
+        "label": "Descending synth resolution"
+      },
+      "precompact": {
+        "filename": "pulse_alert.mp3",
+        "label": "Pulsing alert tone"
+      },
+      "permission": {
+        "filename": "repeating_ping.mp3",
+        "label": "Soft repeating ping"
+      },
+      "question": {
+        "filename": "vibrato_rise.mp3",
+        "label": "Rising synth with vibrato"
+      }
+    }
   }
 }

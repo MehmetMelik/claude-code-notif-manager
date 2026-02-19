@@ -141,6 +141,10 @@ claude_sound_watcher_stop() {
 
 claude_sound_watcher_restart() {
   claude_sound_watcher_stop
+  # Re-source theme file so switched themes take effect without a new shell
+  if [ -f "$CLAUDE_SOUNDS_DIR/.theme" ]; then
+    source "$CLAUDE_SOUNDS_DIR/.theme"
+  fi
   claude_sound_watcher_start
 }
 

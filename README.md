@@ -68,15 +68,16 @@ cd claude-code-notif-manager
 ./scripts/download-theme-sounds.sh sc2/protoss
 ```
 
-Available themes (13 total):
+Available themes (16 total):
 
 | Game | Themes |
 |------|--------|
 | StarCraft II | `sc2/protoss`, `sc2/terran`, `sc2/zerg` |
 | Warcraft II | `wc2/alliance`, `wc2/horde` |
 | Age of Empires III | `aoe3/british`, `aoe3/french`, `aoe3/spanish`, `aoe3/portuguese`, `aoe3/dutch`, `aoe3/germans`, `aoe3/russians`, `aoe3/ottomans` |
+| Tech | `tech/minimal`, `tech/retro`, `tech/sci-fi` |
 
-To switch themes, just run the download script again with a different theme name. The `.theme` file is sourced automatically by the shell scripts.
+To switch themes, just run the download script again with a different theme name, then `claude_sound_watcher_restart` to pick up the new sounds. Tech themes are generated locally via `ffmpeg` — no downloads needed.
 
 You can also set `CLAUDE_SOUND_THEME` and run the existing download script:
 

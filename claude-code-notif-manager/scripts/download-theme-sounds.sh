@@ -139,6 +139,12 @@ if ! jq -e --arg t "$THEME" '.[$t]' "$THEMES_FILE" >/dev/null 2>&1; then
   exit 1
 fi
 
+# Delegate to generator for synthesised themes
+GENERATED=$(jq -r --arg t "$THEME" '.[$t].generated // false' "$THEMES_FILE")
+if [ "$GENERATED" = "true" ]; then
+  exec "$SCRIPT_DIR/generate-tech-sounds.sh" "$THEME"
+fi
+
 GAME=$(jq -r --arg t "$THEME" '.[$t].game' "$THEMES_FILE")
 FACTION=$(jq -r --arg t "$THEME" '.[$t].faction' "$THEMES_FILE")
 
