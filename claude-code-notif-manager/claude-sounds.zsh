@@ -5,7 +5,7 @@
 CLAUDE_DIR="$HOME/.claude"
 
 export CLAUDE_SOUNDS_DIR="${CLAUDE_SOUNDS_DIR:-$HOME/.claude/sounds}"
-export CLAUDE_SOUND_VOLUME="${CLAUDE_SOUND_VOLUME:-0.3}"  # 0-1 multiplier, 1 = full volume
+export CLAUDE_SOUND_VOLUME="${CLAUDE_SOUND_VOLUME:-0.6}"  # 0-1 multiplier, 1 = full volume
 
 # Trigger files (created by Claude hooks)
 export CLAUDE_DONE_FILE="${CLAUDE_DONE_FILE:-$CLAUDE_DIR/.claude-done}"
